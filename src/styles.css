@@ -11,15 +11,17 @@ body {
   color: blue;
   font-size: 3rem;
   font-weight: bold;
+  margin-bottom: 1.5vh;
 }
 
-.add-reminder {
+#plus-button {
   font-size: 1.5rem;
   height: 50%;
   border-radius: 35%;
-  border: 1px solid white;
+  border: none;
   background-color: white;
   box-shadow: 1px 1px 1px 1px gainsboro;
+  cursor: pointer;
 }
 
 #reminders-list {
@@ -33,15 +35,59 @@ body {
   gap: 10px;
 }
 
+.check-circle input {
+  display: none;
+}
+
 .check-circle {
   border: 2px solid gainsboro;
+  border-radius: 50%;
+}
+
+.checkmark {
+  border: 2px solid white;
   border-radius: 50%;
   height: 22px;
   width: 22px;
   background-color: white;
+
+  display: inline-block;
+  vertical-align: middle;
+  position: relative;
+  cursor: pointer;
 }
 
-.reminder-text {
+input:checked+.checkmark {
+  background-color: #2196F3;
+}
+
+input:checked+.checkmark::after {
+  display: block;
+}
+
+.reminder-label {
   display: flex;
   align-items: center;
 }
+
+.reminder-label .box {
+  border: none;
+  border-bottom: 1px solid whitesmoke;
+  caret-color: blue;
+}
+
+.reminder-label .box:focus {
+  outline: none;
+}
+
+.reminder-label .box:focus {
+  outline: none;
+}
+
+/* .reminder-label input:focus {
+  border-bottom-color: #2196F3;
+} */
+
+/* .reminder-input .box:focus {
+  border: none;
+} */
